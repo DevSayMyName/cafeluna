@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Luna - Café de Altura</title>
+    <!-- Fuentes Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+</head>
+<body>
+
+    <!-- SPLASH SCREEN -->
+    <div class="splash-screen" id="splashScreen">
+        <img src="/img/logoCafeLuna.png" alt="Café Luna Logo" class="splash-logo">
+        <div class="splash-text">Café Luna</div>
+        <div class="splash-loader">
+            <div class="splash-loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#inicio" class="logo">
+                <img src="/img/logoCafeLuna.png" alt="Logo Café Luna">
+                <span class="logo-text">Café <span>Luna</span></span>
+            </a>
+
+            <!-- Menú simplificado: Inicio, Productos, Contacto -->
+            <ul id="navMenu" class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Acciones de Navegación (Carrito + Hamburguesa) -->
+            <div class="nav-actions">
+                <button class="cart-icon-btn" aria-label="Ver carrito">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <div class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <img src="/img/heroImg.jpg" alt="Café Luna Portada" class="hero-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="subtitle">Café de Altura</p>
+                <h1>Café <span>Luna</span></h1>
+                <p class="tagline">Cultivado con pasión, tostado con arte, servido con amor</p>
+                <a href="#productos" class="hero-btn">Descubre Nuestros Cafés</a>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+            </div>
+        </section>
+<!-- PRODUCTOS EN GRID -->
+<section class="products" id="productos">
+    <div class="section-container">
+        <div class="section-title fade-in">
+            <h2>Nuestros Productos</h2>
+            <p>Selección premium de cafés artesanales para todos los gustos</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Tarjeta de Producto 1 -->
+            <article class="product-card fade-in" data-title="Café Molido Tradicional" data-price="12.99">
+                <div class="product-image-container">
+                    <img src="/img/producto-molido.jpg" alt="Café Molido Tradicional" class="product-img">
+                    <span class="tag">Más Vendido</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Molido Tradicional</h3>
+                    <p class="product-description">Tueste medio con notas a chocolate y caramelo. Ideal para el día a día.</p>
+                    <div class="product-price">$12.99 <small>/ 500g</small></div>
+                    
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tarjeta de Producto 2 -->
+            <article class="product-card fade-in" data-title="Grano Entero Selecto" data-price="10.00">
+                <div class="product-image-container">
+                    <img src="/img/producto-grano.jpg" alt="Grano Entero Selecto" class="product-img">
+                    <span class="tag">Premium</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Grano Entero Selecto</h3>
+                    <p class="product-description">Granos seleccionados a mano. Tueste oscuro con cuerpo intenso y aroma profundo.</p>
+                    <div class="product-price">$10.00 <small>/ 500g</small></div>
+                    
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tarjeta de Producto 3 -->
+            <article class="product-card fade-in" data-title="Café Orgánico de Altura" data-price="18.99">
+                <div class="product-image-container">
+                    <img src="/img/producto-organico.jpg" alt="Café Orgánico de Altura" class="product-img">
+                    <span class="tag">Edición Especial</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Orgánico de Altura</h3>
+                    <p class="product-description">Cultivado a más de 1800m. Sabor suave con notas frutales y acidez brillante.</p>
+                    <div class="product-price">$18.99 <small>/ 500g</small></div>
+                    
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+        <!-- CONTACTO -->
+        <section class="contact" id="contacto">
+            <div class="section-container">
+                <div class="section-title fade-in">
+                    <h2>Contáctanos</h2>
+                    <p>¿Tienes preguntas? Estamos aquí para ayudarte</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info fade-in">
+                        <h3>Hablemos de Café</h3>
+                        <p>Estamos encantados de responder tus preguntas o ayudarte a elegir tu tipo de café ideal.</p>
+                        <div class="contact-item">
+                            <div class="icon-box">📍</div>
+                            <div class="text">
+                                <strong>Dirección</strong>
+                                <span>Finca La Esperanza, Vereda El Paraíso</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-box">📞</div>
+                            <div class="text">
+                                <strong>Teléfono</strong>
+                                <span>+503 7740 1541</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-box">✉️</div>
+                            <div class="text">
+                                <strong>Email</strong>
+                                <span>info@cafeluna.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form fade-in">
+                        <form onsubmit="handleSubmit(event)">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" placeholder="tu@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Café Luna</h4>
+                <p>Más de 70 años cultivando el mejor café artesanal del campo a tu taza.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Productos</h4>
+                <ul>
+                    <li><a href="#productos">Café Molido</a></li>
+                    <li><a href="#productos">Grano Entero</a></li>
+                    <li><a href="#productos">Café Orgánico</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Café Luna. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- MODAL DEL CARRITO -->
+<div class="cart-overlay" id="cartOverlay">
+    <div class="cart-modal">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button type="button" class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+
+        <!-- Contenedor dinámico de productos -->
+        <div class="cart-body" id="cartItems">
+            <p class="cart-empty">Tu carrito está vacío ☕</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total-box">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+
+            <!-- Formulario de Pedido -->
+            <form onsubmit="handleCheckout(event)" class="checkout-form">
+                <div class="form-group">
+                    <label for="checkoutName">Tu Nombre Completo</label>
+                    <input type="text" id="checkoutName" placeholder="Ej. Ana García" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkoutLocation">Ubicación / Dirección de entrega</label>
+                    <input type="text" id="checkoutLocation" placeholder="Ej. Calle 12 #4-56, Ciudad" required>
+                </div>
+                <button type="submit" class="checkout-btn">Proceder con la Compra (WhatsApp)</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
