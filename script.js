@@ -1,12 +1,13 @@
 // ===== CONFIGURACIÓN GLOBAL =====
-let cart = [];
-const PHONE_NUMBER = "50377401541"; // Reemplaza con tu número real (código de país + número sin +)
+let cart = JSON.parse(localStorage.getItem('cart_luna')) || [];
+const PHONE_NUMBER = "50376609138";
 
 // ===== EVENTOS AL CARGAR LA PÁGINA =====
 document.addEventListener('DOMContentLoaded', () => {
     initQuantityControls();
     initAddToCartButtons();
     initCartModal();
+    updateCartUI();
 });
 
 // Control del Splash Screen (Se muestra únicamente 1 vez por sesión)
@@ -15,11 +16,11 @@ window.addEventListener('load', () => {
     if (!splash) return;
 
     if (sessionStorage.getItem('splashShown')) {
-        splash.style.display = 'none'; // Oculta inmediatamente sin repetir la animación
+        splash.style.display = 'none';
     } else {
         setTimeout(() => {
             splash.classList.add('hidden');
-            sessionStorage.setItem('splashShown', 'true'); // Marca la animación como vista
+            sessionStorage.setItem('splashShown', 'true');
         }, 1000);
     }
 });
@@ -47,15 +48,13 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-function handleSubmit(e) {
-    e.preventDefault();
-    alert('¡Gracias por tu mensaje! Te contactaremos pronto. ☕');
-    e.target.reset();
-}
-
 // ===== LÓGICA DEL CARRITO =====
 
-// 1. Controles de cantidad (+ y -)
+function saveCartToStorage() {
+    localStorage.setItem('cart_luna', JSON.stringify(cart));
+}
+
+// 1. Controles de cantidad (+ y -) en el catálogo
 function initQuantityControls() {
     document.querySelectorAll('.quantity-selector').forEach(selector => {
         const decBtn = selector.querySelector('.decrease');
@@ -76,16 +75,14 @@ function initQuantityControls() {
     });
 }
 
-// 2. Agregar productos con lector automático de precio
+// 2. Agregar productos al carrito
 function initAddToCartButtons() {
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const card = e.target.closest('.product-card');
             
-            // Título del producto
             const title = card.dataset.title || card.querySelector('.product-title').innerText;
             
-            // Lector de precio: usa data-price o extrae automáticamente el valor numérico visible
             let price = parseFloat(card.dataset.price);
             if (isNaN(price)) {
                 const priceText = card.querySelector('.product-price').innerText;
@@ -98,7 +95,6 @@ function initAddToCartButtons() {
 
             addToCart(title, price, quantity);
             
-            // Feedback en el botón sin abrir el carrito
             const originalText = btn.innerText;
             btn.innerText = '¡Agregado! ☕';
             btn.classList.add('added');
@@ -108,13 +104,15 @@ function initAddToCartButtons() {
                 btn.classList.remove('added');
             }, 1200);
 
-            // Reinicia el contador a 1 en la tarjeta
             quantityInput.value = 1;
         });
     });
 }
 
 function addToCart(title, price, quantity) {
+    price = Number(price) || 0;
+    quantity = Number(quantity) || 1;
+
     const existingItem = cart.find(item => item.title === title);
 
     if (existingItem) {
@@ -126,13 +124,28 @@ function addToCart(title, price, quantity) {
     updateCartUI();
 }
 
-// 3. Renderizar productos y calcular total general
+// 3. Modificar cantidad (+ / -) dentro del modal
+function changeCartQuantity(index, delta) {
+    if (!cart[index]) return;
+
+    cart[index].quantity += delta;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    updateCartUI();
+}
+
+// 4. Renderizar productos, calcular total y actualizar UI
 function updateCartUI() {
+    saveCartToStorage();
+
     const cartCount = document.getElementById('cartCount');
     const cartItemsContainer = document.getElementById('cartItems');
     const cartTotalElement = document.getElementById('cartTotal');
 
-    const totalBadgeCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    const totalBadgeCount = cart.reduce((acc, item) => acc + (Number(item.quantity) || 0), 0);
     if (cartCount) cartCount.innerText = totalBadgeCount;
 
     if (!cartItemsContainer || !cartTotalElement) return;
@@ -147,16 +160,26 @@ function updateCartUI() {
     let grandTotal = 0;
 
     cart.forEach((item, index) => {
-        const itemSubtotal = item.price * item.quantity;
-        grandTotal += itemSubtotal;
+        const itemPrice = Number(item.price) || 0;
+        const itemQty = Number(item.quantity) || 0;
+
+        const itemSubtotal = Math.round(itemPrice * itemQty * 100) / 100;
+        grandTotal = Math.round((grandTotal + itemSubtotal) * 100) / 100;
 
         itemsHTML += `
             <div class="cart-item">
                 <div class="cart-item-info">
                     <h4>${item.title}</h4>
-                    <p>${item.quantity} x $${item.price.toFixed(2)} = <strong>$${itemSubtotal.toFixed(2)}</strong></p>
+                    <p>$${itemPrice.toFixed(2)} c/u — Total: <strong>$${itemSubtotal.toFixed(2)}</strong></p>
                 </div>
-                <button type="button" onclick="removeFromCart(${index})" class="cart-remove-btn" title="Eliminar producto">🗑️</button>
+                <div class="cart-item-controls">
+                    <div class="quantity-selector cart-qty">
+                        <button type="button" onclick="changeCartQuantity(${index}, -1)" class="qty-btn">-</button>
+                        <span class="qty-value">${itemQty}</span>
+                        <button type="button" onclick="changeCartQuantity(${index}, 1)" class="qty-btn">+</button>
+                    </div>
+                    <button type="button" onclick="removeFromCart(${index})" class="cart-remove-btn" title="Eliminar producto">🗑️</button>
+                </div>
             </div>
         `;
     });
@@ -165,13 +188,13 @@ function updateCartUI() {
     cartTotalElement.innerText = `$${grandTotal.toFixed(2)}`;
 }
 
-// 4. Eliminar producto del carrito
+// 5. Eliminar un producto del carrito
 function removeFromCart(index) {
     cart.splice(index, 1);
     updateCartUI();
 }
 
-// 5. Apertura y cierre del modal del carrito
+// 6. Apertura y cierre del modal
 function initCartModal() {
     const cartBtn = document.querySelector('.cart-icon-btn');
     const closeBtn = document.getElementById('closeCartBtn');
@@ -197,7 +220,7 @@ function toggleCartModal(show) {
     }
 }
 
-// 6. Enviar orden a WhatsApp
+// 7. Enviar orden directa a WhatsApp
 function handleCheckout(e) {
     e.preventDefault();
 
@@ -217,12 +240,16 @@ function handleCheckout(e) {
         return;
     }
 
-    const grandTotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-
+    let grandTotal = 0;
     let orderList = '';
+
     cart.forEach(item => {
-        const itemSubtotal = (item.price * item.quantity).toFixed(2);
-        orderList += `- ${item.quantity}x ${item.title} ($${itemSubtotal})\n`;
+        const itemPrice = Number(item.price) || 0;
+        const itemQty = Number(item.quantity) || 0;
+        const itemSubtotal = Math.round(itemPrice * itemQty * 100) / 100;
+        grandTotal = Math.round((grandTotal + itemSubtotal) * 100) / 100;
+
+        orderList += `- ${itemQty}x ${item.title} ($${itemSubtotal.toFixed(2)})\n`;
     });
 
     const message = `hola CAFE LUNA
@@ -238,4 +265,7 @@ Total a pagar: $${grandTotal.toFixed(2)}`;
     const whatsappURL = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodeURIComponent(message)}`;
     
     window.open(whatsappURL, '_blank');
+
+    cart = [];
+    updateCartUI();
 }

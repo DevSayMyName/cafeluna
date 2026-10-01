@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Café Luna - Café de Altura</title>
+    <title>Café Luna | Selección Especial de Altura</title>
     <!-- Fuentes Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
-    
 </head>
 <body>
 
     <!-- SPLASH SCREEN -->
     <div class="splash-screen" id="splashScreen">
-        <img src="/img/logoCafeLuna.png" alt="Café Luna Logo" class="splash-logo">
-        <div class="splash-text">Café Luna</div>
-        <div class="splash-loader">
-            <div class="splash-loader-bar"></div>
+        <div class="splash-content">
+            <img src="./img/logoCafeLuna.png" alt="Café Luna Logo" class="splash-logo">
+            <div class="splash-text">Café <span>Luna</span></div>
+            <div class="splash-sub">Café Artesanal de Altura</div>
+            <div class="splash-loader">
+                <div class="splash-loader-bar"></div>
+            </div>
         </div>
     </div>
 
@@ -28,18 +30,16 @@
     <header class="header">
         <nav class="nav-container">
             <a href="#inicio" class="logo">
-                <img src="/img/logoCafeLuna.png" alt="Logo Café Luna">
+                <img src="./img/logoCafeLuna.png" alt="Logo Café Luna">
                 <span class="logo-text">Café <span>Luna</span></span>
             </a>
 
-            <!-- Menú simplificado: Inicio, Productos, Contacto -->
             <ul id="navMenu" class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#productos">Productos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#productos">Nuestros Cafés</a></li>
+                <li><a href="#contacto">Atención Directa</a></li>
             </ul>
 
-            <!-- Acciones de Navegación (Carrito + Hamburguesa) -->
             <div class="nav-actions">
                 <button class="cart-icon-btn" aria-label="Ver carrito">
                     <span class="cart-icon">🛒</span>
@@ -55,167 +55,349 @@
     </header>
 
     <main>
-        <!-- HERO -->
+        <!-- HERO REDISEÑADO PREMIUM -->
         <section class="hero" id="inicio">
-            <img src="/img/heroImg.jpg" alt="Café Luna Portada" class="hero-img">
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <p class="subtitle">Café de Altura</p>
-                <h1>Café <span>Luna</span></h1>
-                <p class="tagline">Cultivado con pasión, tostado con arte, servido con amor</p>
-                <a href="#productos" class="hero-btn">Descubre Nuestros Cafés</a>
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-content fade-in">
+                <span class="badge-gold">✦ Selección de Altura ✦</span>
+                <h1>El Arte del Buen <span>Café</span></h1>
+                <p class="tagline">Granos seleccionados tostados artesanalmente con opciones naturales y notas exclusivas.</p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="hero-btn primary">Ver Catálogo</a>
+                    <a href="#contacto" class="hero-btn secondary">Pedido Especial</a>
+                </div>
             </div>
             <div class="scroll-indicator">
                 <span></span>
             </div>
         </section>
-<!-- PRODUCTOS EN GRID -->
-<section class="products" id="productos">
+
+
+        <!-- SECCIÓN SOBRE NOSOTROS (MISIÓN, VISIÓN Y VALORES) -->
+<section class="about-us" id="nosotros">
     <div class="section-container">
+        <!-- Encabezado de Sección -->
         <div class="section-title fade-in">
-            <h2>Nuestros Productos</h2>
-            <p>Selección premium de cafés artesanales para todos los gustos</p>
+            <span class="section-subtitle">Nuestra Esencia</span>
+            <h2>Propósito</h2>
+            <p>El compromiso y la pasión que guían cada grano de Café Luna.</p>
         </div>
 
-        <div class="products-grid">
-            <!-- Tarjeta de Producto 1 -->
-            <article class="product-card fade-in" data-title="Café Molido Tradicional" data-price="12.99">
-                <div class="product-image-container">
-                    <img src="/img/producto-molido.jpg" alt="Café Molido Tradicional" class="product-img">
-                    <span class="tag">Más Vendido</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Café Molido Tradicional</h3>
-                    <p class="product-description">Tueste medio con notas a chocolate y caramelo. Ideal para el día a día.</p>
-                    <div class="product-price">$12.99 <small>/ 500g</small></div>
-                    
-                    <div class="product-purchase">
-                        <div class="quantity-selector">
-                            <button type="button" class="qty-btn decrease">-</button>
-                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                            <button type="button" class="qty-btn increase">+</button>
-                        </div>
-                        <button type="button" class="add-to-cart-btn">Agregar</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Tarjeta de Producto 2 -->
-            <article class="product-card fade-in" data-title="Grano Entero Selecto" data-price="10.00">
-                <div class="product-image-container">
-                    <img src="/img/producto-grano.jpg" alt="Grano Entero Selecto" class="product-img">
-                    <span class="tag">Premium</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Grano Entero Selecto</h3>
-                    <p class="product-description">Granos seleccionados a mano. Tueste oscuro con cuerpo intenso y aroma profundo.</p>
-                    <div class="product-price">$10.00 <small>/ 500g</small></div>
-                    
-                    <div class="product-purchase">
-                        <div class="quantity-selector">
-                            <button type="button" class="qty-btn decrease">-</button>
-                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                            <button type="button" class="qty-btn increase">+</button>
-                        </div>
-                        <button type="button" class="add-to-cart-btn">Agregar</button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Tarjeta de Producto 3 -->
-            <article class="product-card fade-in" data-title="Café Orgánico de Altura" data-price="18.99">
-                <div class="product-image-container">
-                    <img src="/img/producto-organico.jpg" alt="Café Orgánico de Altura" class="product-img">
-                    <span class="tag">Edición Especial</span>
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Café Orgánico de Altura</h3>
-                    <p class="product-description">Cultivado a más de 1800m. Sabor suave con notas frutales y acidez brillante.</p>
-                    <div class="product-price">$18.99 <small>/ 500g</small></div>
-                    
-                    <div class="product-purchase">
-                        <div class="quantity-selector">
-                            <button type="button" class="qty-btn decrease">-</button>
-                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                            <button type="button" class="qty-btn increase">+</button>
-                        </div>
-                        <button type="button" class="add-to-cart-btn">Agregar</button>
-                    </div>
-                </div>
-            </article>
+        <!-- Misión y Visión -->
+        <div class="mv-grid fade-in">
+            <div class="mv-card">
+                <div class="mv-icon">🎯</div>
+                <h3>Misión</h3>
+                <p>"Unir a las familias a través del sabor exquisito de un café 100% puro cultivado en las zonas altas de El Salvador, garantizando una experiencia deliciosa y superior para el paladar más exigente."</p>
+            </div>
+            
+            <div class="mv-card">
+                <div class="mv-icon">🔭</div>
+                <h3>Visión</h3>
+                <p>"Ser la marca de café preferida por las familias, reconocida por llevar a cada hogar la pureza de un café 100% de zonas altas, convirtiéndonos en la primera opción para saborear un deleite inigualable al paladar."</p>
+            </div>
         </div>
     </div>
 </section>
 
-        <!-- CONTACTO -->
-        <section class="contact" id="contacto">
+
+        <!-- PRODUCTOS EN GRID (8 PRODUCTOS) -->
+        <section class="products" id="productos">
             <div class="section-container">
                 <div class="section-title fade-in">
-                    <h2>Contáctanos</h2>
-                    <p>¿Tienes preguntas? Estamos aquí para ayudarte</p>
+                    <span class="section-subtitle">Nuestra Galería</span>
+                    <h2>Nuestra Colección de Cafés</h2>
+                    <p>Variedades naturales y aromatizadas elaboradas con el balance perfecto para resaltar el carácter artesanal.</p>
                 </div>
-                <div class="contact-grid">
-                    <div class="contact-info fade-in">
-                        <h3>Hablemos de Café</h3>
-                        <p>Estamos encantados de responder tus preguntas o ayudarte a elegir tu tipo de café ideal.</p>
-                        <div class="contact-item">
+
+                <div class="products-grid">
+                    <!-- 1. Café Natural (454g / 1 lb) -->
+                    <article class="product-card fade-in" data-title="Café Natural" data-price="5.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/natural.jpeg" alt="Café Natural" class="product-img" loading="lazy">
+                            <span class="tag tag-natural">Tueste Clásico</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Natural</h3>
+                            <p class="product-description">Granos 100% puros de altura con tueste medio, balance perfecto y cuerpo suave natural.</p>
+                            <div class="product-price">$5.50 <small>/ 1 lb (454g)</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 2. Vainilla (400g) -->
+                    <article class="product-card fade-in" data-title="Café Sabor Vainilla" data-price="6.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/vainilla.jpeg" alt="Café Sabor Vainilla" class="product-img" loading="lazy">
+                            <span class="tag tag-vainilla">Suave & Dulce</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Sabor Vainilla</h3>
+                            <p class="product-description">Aroma delicado y notas cremosas de vainilla francesa sobre base de tueste medio.</p>
+                            <div class="product-price">$6.50 <small>/ 400g</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Canela (400g) -->
+                    <article class="product-card fade-in" data-title="Café Sabor Canela" data-price="6.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/canela.jpeg" alt="Café Sabor Canela" class="product-img" loading="lazy">
+                            <span class="tag tag-canela">Especiado</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Sabor Canela</h3>
+                            <p class="product-description">Cálida combinación de canela artesanal Ceylon y café tostado con cuerpo reconfortante.</p>
+                            <div class="product-price">$6.50 <small>/ 400g</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 4. Crema Irlandesa (400g) -->
+                    <article class="product-card fade-in" data-title="Café Sabor Crema Irlandesa" data-price="6.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/irlandesa.jpeg" alt="Café Sabor Crema Irlandesa" class="product-img" loading="lazy">
+                            <span class="tag tag-irlandesa">Selección Lujo</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Sabor Crema Irlandesa</h3>
+                            <p class="product-description">Sofisticadas notas aterciopeladas con matices licorosos gourmet y aroma suave.</p>
+                            <div class="product-price">$6.50 <small>/ 400g</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 5. Chocolate (400g) -->
+                    <article class="product-card fade-in" data-title="Café Sabor Chocolate" data-price="6.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/chocolate.jpeg" alt="Café Sabor Chocolate" class="product-img" loading="lazy">
+                            <span class="tag tag-chocolate">Intenso Cacao</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Sabor Chocolate</h3>
+                            <p class="product-description">Infusión profunda de cacao artesanal con amargor equilibrado y final suntuoso.</p>
+                            <div class="product-price">$6.50 <small>/ 400g</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 6. Menta (400g) -->
+                    <article class="product-card fade-in" data-title="Café Sabor Menta" data-price="6.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/menta.jpeg" alt="Café Sabor Menta" class="product-img" loading="lazy">
+                            <span class="tag tag-menta">Fresh Gourmet</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Sabor Menta</h3>
+                            <p class="product-description">Contraste herbal refrescante con el tueste del café, ideal para servirse frío o caliente.</p>
+                            <div class="product-price">$6.50 <small>/ 400g</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 7. Amaretto (400g) -->
+                    <article class="product-card fade-in" data-title="Café Sabor Amaretto" data-price="6.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/amareto.jpeg" alt="Café Sabor Amaretto" class="product-img" loading="lazy">
+                            <span class="tag tag-amaretto">Frutos Secos</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Sabor Amaretto</h3>
+                            <p class="product-description">Exquisitas notas de almendras tostadas y aroma licoroso con regusto persistente.</p>
+                            <div class="product-price">$6.50 <small>/ 400g</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 8. Coco (400g) -->
+                    <article class="product-card fade-in" data-title="Café Sabor Coco" data-price="6.50">
+                        <div class="product-image-container">
+                            <img src="./img/productos/coco.jpeg" alt="Café Sabor Coco" class="product-img" loading="lazy">
+                            <span class="tag tag-coco">Tropical</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Café Sabor Coco</h3>
+                            <p class="product-description">Un viaje tropical con suave esencia de coco tostado y dulzor suave natural.</p>
+                            <div class="product-price">$6.50 <small>/ 400g</small></div>
+                            <div class="product-purchase">
+                                <div class="quantity-selector">
+                                    <button type="button" class="qty-btn decrease">-</button>
+                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                                    <button type="button" class="qty-btn increase">+</button>
+                                </div>
+                                <button type="button" class="add-to-cart-btn">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+ <!-- SECCIÓN SOBRE NOSOTROS (MISIÓN, VISIÓN Y VALORES) -->
+<section class="about-us" id="nosotros">
+    <div class="section-container">
+        
+
+        <!-- Subtítulo de Valores -->
+        <div class="values-header fade-in">
+            <h3>Nuestros Valores</h3>
+        </div>
+
+        <!-- Grid de Valores -->
+        <div class="values-grid">
+            <div class="value-card fade-in">
+                <div class="value-icon">👨‍👩‍👧‍👦</div>
+                <h4>Unión Familiar</h4>
+                <p>Ponemos a la familia en el centro de todo lo que hacemos, promoviendo momentos de calidez, conexión y tradición compartida alrededor de una taza de café.</p>
+            </div>
+
+            <div class="value-card fade-in">
+                <div class="value-icon">🌱</div>
+                <h4>Pureza e Integridad</h4>
+                <p>Nos comprometemos a ofrecer un café 100% puro y transparente, sin mezclas ni añadidos, cuidando la salud y manteniendo la confianza de nuestros clientes.</p>
+            </div>
+
+            <div class="value-card fade-in">
+                <div class="value-icon">🏔️️</div>
+                <h4>Orgullo de Altura</h4>
+                <p>Honramos el origen de nuestro grano cultivado en las zonas más altas, respetando los procesos que otorgan a este café su densidad, cuerpo y calidad excepcional.</p>
+            </div>
+
+            <div class="value-card fade-in">
+                <div class="value-icon">☕</div>
+                <h4>Deleite al Paladar</h4>
+                <p>Buscamos la perfección en el tueste para garantizar una experiencia sensorial superior, asegurando un sabor memorable que conquiste a los paladares más exigentes.</p>
+            </div>
+
+            <div class="value-card fade-in">
+                <div class="value-icon">⭐</div>
+                <h4>Excelencia de Selección</h4>
+                <p>Nos esforzamos por ser una de las mejores opciones del mercado, cuidando cada detalle desde la cosecha en la montaña hasta la taza final.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+       <!-- BANNER DECORATIVO CON ANIMACIÓN DE HUMO -->
+<div class="coffee-steam-banner">
+    <div class="steam-container">
+        <!-- Partículas de Humo -->
+        <span class="steam-particle steam-1"></span>
+        <span class="steam-particle steam-2"></span>
+        <span class="steam-particle steam-3"></span>
+        <!-- Taza de Café -->
+        <div class="coffee-cup-icon">☕</div>
+    </div>
+    <p class="steam-tagline">El aroma de la tradición en cada taza</p>
+</div>
+
+        
+        <!-- SECCIÓN DE ATENCIÓN DIRECTA -->
+        <section class="contact" id="contacto">
+            <div class="section-container">
+                <div class="contact-card-premium fade-in">
+                    <div class="contact-header">
+                        <span class="badge-gold">Atención Personalizada</span>
+                        <h2>¿Dudas o Pedidos Especiales?</h2>
+                        <p>Haz tus consultas o realiza tu pedido de manera inmediata a través de nuestro canal oficial de WhatsApp.</p>
+                    </div>
+
+                    <div class="contact-details-grid">
+                        <div class="contact-info-item">
                             <div class="icon-box">📍</div>
                             <div class="text">
-                                <strong>Dirección</strong>
-                                <span>Finca La Esperanza, Vereda El Paraíso</span>
+                                <strong>Ubicación</strong>
+                                <span>Sonsonate, El Salvador</span>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="icon-box">📞</div>
+                        <div class="contact-info-item">
+                            <div class="icon-box">💬</div>
                             <div class="text">
-                                <strong>Teléfono</strong>
-                                <span>+503 7740 1541</span>
+                                <strong>WhatsApp Oficial</strong>
+                                <span>+503 7660 9138</span>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="icon-box">✉️</div>
+                        <div class="contact-info-item">
+                            <div class="icon-box">⏰</div>
                             <div class="text">
-                                <strong>Email</strong>
-                                <span>info@cafeluna.com</span>
+                                <strong>Horario de Atención</strong>
+                                <span>Lunes a Sábado: 8:00 AM - 6:00 PM</span>
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form fade-in">
-                        <form onsubmit="handleSubmit(event)">
-                            <div class="form-group">
-                                <label for="name">Nombre Completo</label>
-                                <input type="text" id="name" placeholder="Tu nombre" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Correo Electrónico</label>
-                                <input type="email" id="email" placeholder="tu@email.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Enviar Mensaje</button>
-                        </form>
+
+                    <div class="direct-wsp-wrapper">
+                        <a href="https://api.whatsapp.com/send?phone=50376609138&text=Hola%20Café%20Luna,%20quisiera%20más%20información%20sobre%20sus%20productos." target="_blank" class="wsp-direct-btn">
+                            <span>Escribir por WhatsApp Directo</span> 💬
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
+
+ 
     </main>
 
     <!-- FOOTER -->
     <footer>
         <div class="footer-grid">
             <div class="footer-col">
-                <h4>Café Luna</h4>
-                <p>Más de 70 años cultivando el mejor café artesanal del campo a tu taza.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook">FB</a>
-                    <a href="#" aria-label="Instagram">IG</a>
-                    <a href="#" aria-label="Twitter">TW</a>
+                <div class="footer-brand">
+                    <img src="./img/logoCafeLuna.png" alt="Café Luna" class="footer-logo">
+                    <h4>Café Luna</h4>
                 </div>
+                <p>Cultivado con pasión, tostado con arte y empacado para llevar la mejor experiencia a tu hogar.</p>
             </div>
             <div class="footer-col">
-                <h4>Enlaces</h4>
+                <h4>Navegación</h4>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#productos">Productos</a></li>
@@ -223,19 +405,19 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Productos</h4>
+                <h4>Variedades</h4>
                 <ul>
-                    <li><a href="#productos">Café Molido</a></li>
-                    <li><a href="#productos">Grano Entero</a></li>
-                    <li><a href="#productos">Café Orgánico</a></li>
+                    <li><a href="#productos">Café Natural</a></li>
+                    <li><a href="#productos">Vainilla & Canela</a></li>
+                    <li><a href="#productos">Crema Irlandesa & Chocolate</a></li>
+                    <li><a href="#productos">Menta, Amaretto & Coco</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Soporte</h4>
+                <h4>Contacto</h4>
                 <ul>
-                    <li><a href="#">Envíos</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Términos</a></li>
+                    <li><a href="tel:+50376609138">+503 7660 9138</a></li>
+                    <li><a href="#contacto">Sonsonate, El Salvador</a></li>
                 </ul>
             </div>
         </div>
@@ -244,41 +426,41 @@
         </div>
     </footer>
 
-
     <!-- MODAL DEL CARRITO -->
-<div class="cart-overlay" id="cartOverlay">
-    <div class="cart-modal">
-        <div class="cart-header">
-            <h3>Tu Carrito de Compras</h3>
-            <button type="button" class="close-cart" id="closeCartBtn">&times;</button>
-        </div>
-
-        <!-- Contenedor dinámico de productos -->
-        <div class="cart-body" id="cartItems">
-            <p class="cart-empty">Tu carrito está vacío ☕</p>
-        </div>
-
-        <div class="cart-footer">
-            <div class="cart-total-box">
-                <span>Total:</span>
-                <span id="cartTotal">$0.00</span>
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-modal">
+            <div class="cart-header">
+                <h3>Tu Carrito de Compras</h3>
+                <button type="button" class="close-cart" id="closeCartBtn">&times;</button>
             </div>
 
-            <!-- Formulario de Pedido -->
-            <form onsubmit="handleCheckout(event)" class="checkout-form">
-                <div class="form-group">
-                    <label for="checkoutName">Tu Nombre Completo</label>
-                    <input type="text" id="checkoutName" placeholder="Ej. Ana García" required>
+            <div class="cart-body" id="cartItems">
+                <p class="cart-empty">Tu carrito está vacío ☕</p>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total-box">
+                    <span>Total a Pagar:</span>
+                    <span id="cartTotal">$0.00</span>
                 </div>
-                <div class="form-group">
-                    <label for="checkoutLocation">Ubicación / Dirección de entrega</label>
-                    <input type="text" id="checkoutLocation" placeholder="Ej. Calle 12 #4-56, Ciudad" required>
-                </div>
-                <button type="submit" class="checkout-btn">Proceder con la Compra (WhatsApp)</button>
-            </form>
+
+                <form onsubmit="handleCheckout(event)" class="checkout-form">
+                    <div class="form-group">
+                        <label for="checkoutName">Tu Nombre Completo</label>
+                        <input type="text" id="checkoutName" placeholder="Ej. Ana García" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkoutLocation">Ubicación / Dirección de entrega</label>
+                        <input type="text" id="checkoutLocation" placeholder="Ej. Colonia Escalón, Calle Principal #12" required>
+                    </div>
+                    <button type="submit" class="checkout-btn">
+                        <span>Completar Pedido en WhatsApp</span>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+
     <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 </body>

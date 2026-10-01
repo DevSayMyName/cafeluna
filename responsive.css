@@ -1,19 +1,33 @@
 /* ==========================================================================
-   RESPONSIVE DESIGN (BREAKPOINTS)
+   RESPONSIVE DESIGN (BREAKPOINTS COMPLETO)
    ========================================================================== */
 
-/* Laptop / Tablets Horizontales (Menos de 992px) */
+/* Pantallas Grandes / Laptops (Menos de 1200px) */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Tablets Horizontales / Laptops Pequeñas (Menos de 992px) */
 @media (max-width: 992px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .contact-grid {
+    .contact-details-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
     }
 
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
     }
 }
 
@@ -25,11 +39,13 @@
         top: var(--nav-height);
         left: 0;
         width: 100%;
-        background: rgba(42, 24, 16, 0.98);
+        background: rgba(26, 15, 10, 0.98);
+        backdrop-filter: blur(15px);
         flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 30px 24px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        text-align: center;
     }
 
     .nav-links.active {
@@ -41,23 +57,48 @@
     }
 
     .hero {
-        min-height: 420px;
+        min-height: 520px;
+        padding: 40px 20px;
     }
 
     .hero-content h1 {
-        font-size: 2.3rem;
+        font-size: 2.4rem;
     }
 
-    .hero-content .subtitle {
+    .hero-content .tagline {
         font-size: 1rem;
     }
 
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
     .section-title h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .products-grid {
         grid-template-columns: 1fr;
+    }
+
+    .contact-card-premium {
+        padding: 40px 20px;
+    }
+
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+
+    .wsp-direct-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 16px 20px;
     }
 
     .footer-grid {
@@ -71,22 +112,17 @@
 
 /* Móviles Pequeños (Menos de 480px) */
 @media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2rem;
+    }
+
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
-    .hero-btn {
-        padding: 12px 28px;
-        font-size: 0.85rem;
-    }
-
-    .splash-logo {
-        width: 130px;
-        height: 130px;
-    }
-
-    .splash-text {
-        font-size: 1.5rem;
+    .badge-gold {
+        font-size: 0.7rem;
+        padding: 4px 12px;
     }
 
     .product-purchase {
@@ -96,5 +132,16 @@
 
     .quantity-selector {
         justify-content: center;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cart-item-controls {
+        width: 100%;
+        justify-content: space-between;
     }
 }
