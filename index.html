@@ -101,186 +101,228 @@
 </section>
 
 
-        <!-- PRODUCTOS EN GRID (8 PRODUCTOS) -->
-        <section class="products" id="productos">
-            <div class="section-container">
-                <div class="section-title fade-in">
-                    <span class="section-subtitle">Nuestra Galería</span>
-                    <h2>Nuestra Colección de Cafés</h2>
-                    <p>Variedades naturales y aromatizadas elaboradas con el balance perfecto para resaltar el carácter artesanal.</p>
+     <!-- PRODUCTOS EN GRID (10 PRODUCTOS) -->
+<section class="products" id="productos">
+    <div class="section-container">
+        <div class="section-title fade-in">
+            <span class="section-subtitle">Nuestra Galería</span>
+            <h2>Nuestra Colección de Cafés</h2>
+            <p>Variedades naturales y aromatizadas elaboradas con el balance perfecto para resaltar el carácter artesanal.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- 1. Café Natural (454g / 1 lb) -->
+            <article class="product-card fade-in" data-title="Café Natural" data-price="5.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/natural.jpeg" alt="Café Natural" class="product-img" loading="lazy">
+                    <span class="tag tag-natural">Tueste Clásico</span>
                 </div>
-
-                <div class="products-grid">
-                    <!-- 1. Café Natural (454g / 1 lb) -->
-                    <article class="product-card fade-in" data-title="Café Natural" data-price="5.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/natural.jpeg" alt="Café Natural" class="product-img" loading="lazy">
-                            <span class="tag tag-natural">Tueste Clásico</span>
+                <div class="product-info">
+                    <h3 class="product-title">Café Natural</h3>
+                    <p class="product-description">Granos 100% puros de altura con tueste medio, balance perfecto y cuerpo suave natural.</p>
+                    <div class="product-price">$5.50 <small>/ 1 lb (454g)</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
                         </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Natural</h3>
-                            <p class="product-description">Granos 100% puros de altura con tueste medio, balance perfecto y cuerpo suave natural.</p>
-                            <div class="product-price">$5.50 <small>/ 1 lb (454g)</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 2. Vainilla (400g) -->
-                    <article class="product-card fade-in" data-title="Café Sabor Vainilla" data-price="6.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/vainilla.jpeg" alt="Café Sabor Vainilla" class="product-img" loading="lazy">
-                            <span class="tag tag-vainilla">Suave & Dulce</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Sabor Vainilla</h3>
-                            <p class="product-description">Aroma delicado y notas cremosas de vainilla francesa sobre base de tueste medio.</p>
-                            <div class="product-price">$6.50 <small>/ 400g</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 3. Canela (400g) -->
-                    <article class="product-card fade-in" data-title="Café Sabor Canela" data-price="6.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/canela.jpeg" alt="Café Sabor Canela" class="product-img" loading="lazy">
-                            <span class="tag tag-canela">Especiado</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Sabor Canela</h3>
-                            <p class="product-description">Cálida combinación de canela artesanal Ceylon y café tostado con cuerpo reconfortante.</p>
-                            <div class="product-price">$6.50 <small>/ 400g</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 4. Crema Irlandesa (400g) -->
-                    <article class="product-card fade-in" data-title="Café Sabor Crema Irlandesa" data-price="6.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/irlandesa.jpeg" alt="Café Sabor Crema Irlandesa" class="product-img" loading="lazy">
-                            <span class="tag tag-irlandesa">Selección Lujo</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Sabor Crema Irlandesa</h3>
-                            <p class="product-description">Sofisticadas notas aterciopeladas con matices licorosos gourmet y aroma suave.</p>
-                            <div class="product-price">$6.50 <small>/ 400g</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 5. Chocolate (400g) -->
-                    <article class="product-card fade-in" data-title="Café Sabor Chocolate" data-price="6.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/chocolate.jpeg" alt="Café Sabor Chocolate" class="product-img" loading="lazy">
-                            <span class="tag tag-chocolate">Intenso Cacao</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Sabor Chocolate</h3>
-                            <p class="product-description">Infusión profunda de cacao artesanal con amargor equilibrado y final suntuoso.</p>
-                            <div class="product-price">$6.50 <small>/ 400g</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 6. Menta (400g) -->
-                    <article class="product-card fade-in" data-title="Café Sabor Menta" data-price="6.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/menta.jpeg" alt="Café Sabor Menta" class="product-img" loading="lazy">
-                            <span class="tag tag-menta">Fresh Gourmet</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Sabor Menta</h3>
-                            <p class="product-description">Contraste herbal refrescante con el tueste del café, ideal para servirse frío o caliente.</p>
-                            <div class="product-price">$6.50 <small>/ 400g</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 7. Amaretto (400g) -->
-                    <article class="product-card fade-in" data-title="Café Sabor Amaretto" data-price="6.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/amareto.jpeg" alt="Café Sabor Amaretto" class="product-img" loading="lazy">
-                            <span class="tag tag-amaretto">Frutos Secos</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Sabor Amaretto</h3>
-                            <p class="product-description">Exquisitas notas de almendras tostadas y aroma licoroso con regusto persistente.</p>
-                            <div class="product-price">$6.50 <small>/ 400g</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- 8. Coco (400g) -->
-                    <article class="product-card fade-in" data-title="Café Sabor Coco" data-price="6.50">
-                        <div class="product-image-container">
-                            <img src="./img/productos/coco.jpeg" alt="Café Sabor Coco" class="product-img" loading="lazy">
-                            <span class="tag tag-coco">Tropical</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Café Sabor Coco</h3>
-                            <p class="product-description">Un viaje tropical con suave esencia de coco tostado y dulzor suave natural.</p>
-                            <div class="product-price">$6.50 <small>/ 400g</small></div>
-                            <div class="product-purchase">
-                                <div class="quantity-selector">
-                                    <button type="button" class="qty-btn decrease">-</button>
-                                    <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
-                                    <button type="button" class="qty-btn increase">+</button>
-                                </div>
-                                <button type="button" class="add-to-cart-btn">Agregar</button>
-                            </div>
-                        </div>
-                    </article>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </article>
+
+            <!-- 2. Vainilla (400g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Vainilla" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/vainilla.jpeg" alt="Café Sabor Vainilla" class="product-img" loading="lazy">
+                    <span class="tag tag-vainilla">Suave & Dulce</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Vainilla</h3>
+                    <p class="product-description">Aroma delicado y notas cremosas de vainilla francesa sobre base de tueste medio.</p>
+                    <div class="product-price">$6.50 <small>/ 400g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 3. Canela (400g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Canela" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/canela.jpeg" alt="Café Sabor Canela" class="product-img" loading="lazy">
+                    <span class="tag tag-canela">Especiado</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Canela</h3>
+                    <p class="product-description">Cálida combinación de canela artesanal Ceylon y café tostado con cuerpo reconfortante.</p>
+                    <div class="product-price">$6.50 <small>/ 400g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 4. Crema Irlandesa (400g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Crema Irlandesa" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/cremairla.jpeg" alt="Café Sabor Crema Irlandesa" class="product-img" loading="lazy">
+                    <span class="tag tag-irlandesa">Selección Lujo</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Crema Irlandesa</h3>
+                    <p class="product-description">Sofisticadas notas aterciopeladas con matices licorosos gourmet y aroma suave.</p>
+                    <div class="product-price">$6.50 <small>/ 400g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 5. Chocolate (300g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Chocolate" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/chocolate.jpeg" alt="Café Sabor Chocolate" class="product-img" loading="lazy">
+                    <span class="tag tag-chocolate">Intenso Cacao</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Chocolate</h3>
+                    <p class="product-description">Infusión profunda de cacao artesanal con amargor equilibrado y final suntuoso.</p>
+                    <div class="product-price">$6.50 <small>/ 300g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 6. Menta (400g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Menta" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/menta.jpeg" alt="Café Sabor Menta" class="product-img" loading="lazy">
+                    <span class="tag tag-menta">Fresh Gourmet</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Menta</h3>
+                    <p class="product-description">Contraste herbal refrescante con el tueste del café, ideal para servirse frío o caliente.</p>
+                    <div class="product-price">$6.50 <small>/ 400g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 7. Amaretto (400g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Amaretto" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/amaretto.jpeg" alt="Café Sabor Amaretto" class="product-img" loading="lazy">
+                    <span class="tag tag-amaretto">Frutos Secos</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Amaretto</h3>
+                    <p class="product-description">Exquisitas notas de almendras tostadas y aroma licoroso con regusto persistente.</p>
+                    <div class="product-price">$6.50 <small>/ 400g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 8. Coco (400g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Coco" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/coco.jpeg" alt="Café Sabor Coco" class="product-img" loading="lazy">
+                    <span class="tag tag-coco">Tropical</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Coco</h3>
+                    <p class="product-description">Un viaje tropical con suave esencia de coco tostado y dulzor suave natural.</p>
+                    <div class="product-price">$6.50 <small>/ 400g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 9. Choco-Menta (300g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Choco-Menta" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/chocomenta.jpeg" alt="Café Sabor Choco-Menta" class="product-img" loading="lazy">
+                    <span class="tag tag-chocomenta">Fusión Fresca</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Choco-Menta</h3>
+                    <p class="product-description">Irresistible mezcla de cacao rico con un toque refrescante de menta artesanal.</p>
+                    <div class="product-price">$6.50 <small>/ 300g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 10. Avellana (300g) -->
+            <article class="product-card fade-in" data-title="Café Sabor Avellana" data-price="6.50">
+                <div class="product-image-container">
+                    <img src="./img/productos/avellana.jpeg" alt="Café Sabor Avellana" class="product-img" loading="lazy">
+                    <span class="tag tag-avellana">Tostado Aromático</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Café Sabor Avellana</h3>
+                    <p class="product-description">Suave y cálida nota a nuez tostada que complementa a la perfección el cuerpo y carácter del grano de altura.</p>
+                    <div class="product-price">$6.50 <small>/ 300g</small></div>
+                    <div class="product-purchase">
+                        <div class="quantity-selector">
+                            <button type="button" class="qty-btn decrease">-</button>
+                            <input type="number" class="qty-input" value="1" min="1" max="99" readonly>
+                            <button type="button" class="qty-btn increase">+</button>
+                        </div>
+                        <button type="button" class="add-to-cart-btn">Agregar</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
  <!-- SECCIÓN SOBRE NOSOTROS (MISIÓN, VISIÓN Y VALORES) -->
 <section class="about-us" id="nosotros">
     <div class="section-container">
