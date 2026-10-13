@@ -125,13 +125,34 @@
         padding: 4px 12px;
     }
 
+    /* ALINEACIÓN Y TAMAÑO DE BOTONES EN MÓVIL */
     .product-purchase {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
     }
 
     .quantity-selector {
-        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .qty-btn {
+        width: 30px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .qty-input {
+        width: 30px;
+        height: 38px;
+        font-size: 0.85rem;
+    }
+
+    .add-to-cart-btn {
+        height: 38px;
+        font-size: 0.8rem;
+        padding: 0 10px;
+        white-space: nowrap;
     }
 
     .cart-item {
@@ -144,6 +165,4 @@
         width: 100%;
         justify-content: space-between;
     }
-
-
 }
