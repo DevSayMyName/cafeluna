@@ -524,6 +524,10 @@ section {
 .tag-menta { background: #1D7A68; color: #FFF; }
 .tag-amaretto { background: #C27D2C; color: #FFF; }
 .tag-coco { background: #F7F5F0; color: #5C4033; border: 1px solid #CCC; }
+.tag-familiar { background: #E0E0E0; color: #333; }
+.tag-avellana { background: #A67C52; color: #FFF; }
+.tag-chocomenta { background: #2E1B18; color: #D4AF37; }
+.tag-natural { background: #F5F5DC; color: #8C6239; border: 1px solid #D4AF37; }
 
 .product-info {
     padding: 26px;
