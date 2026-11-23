@@ -528,6 +528,7 @@ section {
 .tag-avellana { background: #A67C52; color: #FFF; }
 .tag-chocomenta { background: #2E1B18; color: #D4AF37; }
 .tag-natural { background: #F5F5DC; color: #8C6239; border: 1px solid #D4AF37; }
+.tag-pacamara{ background: green; color: white; border: 1px solid green;}
 
 .product-info {
     padding: 26px;
